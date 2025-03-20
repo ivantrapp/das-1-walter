@@ -32,3 +32,10 @@ Who Needs an Architect? - https://martinfowler.com/ieeeSoftware/whoNeedsArchitec
 - O que é arquitetura? - É o core do produto, do que todas as pessoas entendem que seja necessário para rodar, a lógica principal, é entender quais dos pequenos componentes do sistemas compõem a lógica do negócio/produto.
 - Qual o comportamento do arquiteto da "Matrix"? - Toma todas as decisões importantes porque ninguém está com o nivel de entendimento sobre o sistema para conseguir tomar as decisões.
 - Qual o comportamento do arquiteto ideal? - Toma menos decisões por conseguir melhorar os times e companheiros de equipe no entendimento das funções principais do sistema. Aumentando o nível do outro, ele ganha leverage para não ter todas as decisões de arquitetura centradas em uma pessoa só.
+
+# Aula 19/03/2025
+
+Filas e Tópicos -> Kafka, RabbitMQ
+Fan out
+Tópico só manda
+Fila -> pooling 
