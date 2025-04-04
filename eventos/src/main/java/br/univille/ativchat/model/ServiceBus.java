@@ -17,6 +17,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @AllArgsConstructor
 @Setter
@@ -30,8 +33,10 @@ public class ServiceBus {
     private ServiceBusSenderClient senderClient;
     private ServiceBusProcessorClient processorClient;
     private ServiceBusAdministrationClient adminClient;
+    private List<Mensagem> mensagem;
 
     public ServiceBus(){
+        this.mensagem = new ArrayList<>();
         this.topicName = "topic-chat";
         this.subscriptionName = "subscription-ivan";
         this.fqdns = "sb-das12025-test-brazilsouth.servicebus.windows.net";
@@ -64,13 +69,15 @@ public class ServiceBus {
             .subscriptionName(subscriptionName)
             .receiveMode(ServiceBusReceiveMode.PEEK_LOCK)
             .processMessage(context -> {
+                mensagem.add(new Mensagem(context.getMessage().getSubject(), context.getMessage().getBody().toString()));
                 System.out.println("Mensagem recebida: " + context.getMessage().getBody().toString());
                 context.complete();
             })
             .processError(context -> {
                 System.out.println("Erro: " + context.getException().getMessage());
             })
-            .buildProcessorClient();        
+            .buildProcessorClient();
+            processorClient.start();
     }
 
     public void send(Mensagem mensagem){

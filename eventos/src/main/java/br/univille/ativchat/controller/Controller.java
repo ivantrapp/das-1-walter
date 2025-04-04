@@ -22,6 +22,10 @@ public class Controller implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         service.enviarMensagem(new Mensagem(form.getNome(), form.getMensagem()));
+
+        for(Mensagem msg : service.buscarMensagens()){
+            form.setMensagem(msg.getNome() + " : " + msg.getTexto());
+        };
     }
 
 }

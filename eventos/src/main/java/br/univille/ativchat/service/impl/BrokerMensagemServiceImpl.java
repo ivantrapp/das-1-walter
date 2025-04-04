@@ -32,19 +32,12 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
     public void enviarMensagem(Mensagem mensagem) {
         System.out.println(mensagem.getNome() + " : " + mensagem.getTexto());
         serviceBus.send(mensagem);
+        System.out.println(serviceBus.getMensagem());;
     }
 
     @Override
-    public void buscarMensagens(List<Mensagem> mensagens) {
-        serviceBus.getProcessorClient().start();
-        System.out.println("Aguardando mensagens...");
-        try {
-            System.in.read();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally{
-            serviceBus.getProcessorClient().close();
-        }
+    public List<Mensagem> buscarMensagens() {
+        return serviceBus.getMensagem();
     }
     
 }
