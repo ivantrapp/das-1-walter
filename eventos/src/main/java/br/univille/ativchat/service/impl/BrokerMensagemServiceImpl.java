@@ -29,7 +29,7 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
     }
 
     @Override
-    public void enviarMensagem(Mensagem mensagem) {
+    public void enviarMensagem(Mensagem mensagem) throws InterruptedException {
         System.out.println(mensagem.getNome() + " : " + mensagem.getTexto());
         serviceBus.send(mensagem);
         System.out.println(serviceBus.getMensagem());;
@@ -39,5 +39,10 @@ public class BrokerMensagemServiceImpl implements BrokerMensagemService {
     public List<Mensagem> buscarMensagens() {
         return serviceBus.getMensagem();
     }
-    
+
+    @Override
+    public void evict() {
+        serviceBus.evict();
+    }
+
 }

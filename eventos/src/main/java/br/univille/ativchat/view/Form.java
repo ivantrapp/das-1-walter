@@ -14,7 +14,7 @@ import br.univille.ativchat.controller.Controller;
 public class Form extends JFrame{
     private JPanel jpnSul;
     private JScrollPane jpnCentro;
-    private JTextArea txtChat;
+    private static JTextArea txtChat;
     private JTextField txtNovaMsg;
     private JButton btnEnviar;
     private String nome;
@@ -56,6 +56,10 @@ public class Form extends JFrame{
         txtChat.setEditable(false);
         txtChat.setLineWrap(true);
         getContentPane().add(jpnCentro, "Center");
+    }
+
+    public static void addChat(String textoNovo) {
+        txtChat.append(textoNovo + "\n");
     }
     private void criaJpnSul() {
         jpnSul = new JPanel();

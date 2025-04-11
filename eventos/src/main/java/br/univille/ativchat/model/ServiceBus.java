@@ -1,5 +1,6 @@
 package br.univille.ativchat.model;
 
+import br.univille.ativchat.view.Form;
 import com.azure.core.amqp.AmqpTransportType;
 import com.azure.identity.DefaultAzureCredential;
 import com.azure.identity.DefaultAzureCredentialBuilder;
@@ -17,6 +18,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,7 +73,7 @@ public class ServiceBus {
             .subscriptionName(subscriptionName)
             .receiveMode(ServiceBusReceiveMode.PEEK_LOCK)
             .processMessage(context -> {
-                mensagem.add(new Mensagem(context.getMessage().getSubject(), context.getMessage().getBody().toString()));
+                Form.addChat(context.getMessage().getBody().toString());
                 System.out.println("Mensagem recebida: " + context.getMessage().getBody().toString());
                 context.complete();
             })
@@ -80,7 +84,11 @@ public class ServiceBus {
             processorClient.start();
     }
 
-    public void send(Mensagem mensagem){
+    public void send(Mensagem mensagem) throws InterruptedException {
         senderClient.sendMessage(new ServiceBusMessage(mensagem.getNome() + ": " +mensagem.getTexto()));
+    }
+
+    public void evict(){
+        this.mensagem.stream().forEach(mensagem1 -> this.mensagem.remove(mensagem1));
     }
 }

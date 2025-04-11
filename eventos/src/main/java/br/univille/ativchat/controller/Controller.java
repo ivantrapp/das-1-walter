@@ -21,11 +21,18 @@ public class Controller implements ActionListener {
     }
     @Override
     public void actionPerformed(ActionEvent e) {
-        service.enviarMensagem(new Mensagem(form.getNome(), form.getMensagem()));
+        try {
+            service.enviarMensagem(new Mensagem(form.getNome(), form.getMensagem()));
+        } catch (InterruptedException ex) {
+            throw new RuntimeException(ex);
+        }
 
         for(Mensagem msg : service.buscarMensagens()){
-            form.setMensagem(msg.getNome() + " : " + msg.getTexto());
+                System.out.println("vai dar append:  "+msg.getTexto());
+                form.addChat(msg.getTexto());
         };
+        service.evict();
+
     }
 
 }
