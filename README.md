@@ -39,3 +39,18 @@ Filas e Tópicos -> Kafka, RabbitMQ
 Fan out
 Tópico só manda
 Fila -> pooling 
+
+# AULA 16/04/2025
+
+Características operacionais de arquitetura: Disponibilidade, continuidade, desempenho, recuperabilidade, segurança, robustez e escalabilidade.
+- Operação da arquitetura, como será a performance final da aplicação.
+
+
+Características estruturais: configuração, extensão, instabilidade, reutilização, localização, manutenção, portabilidade, suporte e atualização. 
+
+- Estrutura de código.
+
+Características Transversais: acessibilidade, armazenamento, autenticação, autorização, legalidade, privacidade, segurança, suporte, usabilidade.
+
+- Restrições específicas para o problema que a arquitetura resolve.
+Toda arquitetura será um misto dessas características, não podendo ter todas, visto que uma pode onerar outra. Mirar na arquitetura que menos onera o sistema e que mais atende o requisito do sistema, independente das melhores técnicas.
