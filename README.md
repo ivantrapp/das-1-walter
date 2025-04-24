@@ -54,3 +54,32 @@ Características Transversais: acessibilidade, armazenamento, autenticação, au
 
 - Restrições específicas para o problema que a arquitetura resolve.
 Toda arquitetura será um misto dessas características, não podendo ter todas, visto que uma pode onerar outra. Mirar na arquitetura que menos onera o sistema e que mais atende o requisito do sistema, independente das melhores técnicas.
+
+# AULA 23/04
+
+Bola de lama -> ausencia de arquitetura definida, mais comum, alto custo de manutenção, dificuldade de escalabilidade.
+
+Débito técnico -> coisas que deveriam ter sido feitas mas não foram por diversas razões.
+
+Arquitetura -> Cliente/Servidor.
+- Desktop e servidor banco de dados -> Database centric, fácil de trocar informação, resolve concorrência.
+- Navegador e servidor web.
+- Três camadas.
+
+Arquiteturas monolíticas
+- Lógica do sistema em um unico repositório.
+- Camadas
+- Pipelines
+- Microkernel
+Arquiteturas distribuídas
+- baseado em serviços
+- orientado a eventos
+- baseada em espaços
+- orientada a serviços
+- microsserviços
+
+Falácias
+- redes é seguro
+- Latência é zero
+- Banda larga é infinita
+- A topologia nunca muda
