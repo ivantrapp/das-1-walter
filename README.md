@@ -83,3 +83,17 @@ Falácias
 - Latência é zero
 - Banda larga é infinita
 - A topologia nunca muda
+
+Desafios sistemas distribuídos:
+ - Logs distribuídos.
+ - Transações distribuídas: Diversos microsserviços conversando entre si.
+ - Manutenção e versionamento de serviços.
+
+
+Arquiteturas resumo:
+
+Arquitetura baseada em camadas: A estrutura da empresa impacta em como será desenvolvido o software.
+- Separação de responsabilidade.
+- Camadas devem falar apenas com suas camadas adjacentes.
+- Tendência de se tornar difícil de manutenção.
+- 
