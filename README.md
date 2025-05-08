@@ -96,4 +96,19 @@ Arquitetura baseada em camadas: A estrutura da empresa impacta em como será des
 - Separação de responsabilidade.
 - Camadas devem falar apenas com suas camadas adjacentes.
 - Tendência de se tornar difícil de manutenção.
-- 
+
+Arquitetura pipeline:
+- Cadeia de programas que entregam resultados um para o outro.
+- MapReduce:
+  - Map: Passa por todos os elementos e modifica-os
+  - Reduce: Reduz todos os elementos
+
+- STDIN & STDOUT
+- Produtores: um programa gera o resultado para o inicio de outro programa
+- Filtros : como o grep, procura um arquivo
+- Transformadores : Recebe em um formato e altera a entrada, como um map.
+- Consumidor : Recebe por final e armazena a informação no banco etc.
+
+-  Exemplos reais: serviços de streaming, kafka.
+-  
+      
