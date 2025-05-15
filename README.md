@@ -110,5 +110,11 @@ Arquitetura pipeline:
 - Consumidor : Recebe por final e armazena a informação no banco etc.
 
 -  Exemplos reais: serviços de streaming, kafka.
--  
+-  NODE RED -> Scratch bolado
+
+Arquitetura microkernel:
+
+Sistema central com vários componentes que ele pode se conectar na execução (IDE e seus plugins, browser, libs java internas ou externas, é microkernel)
+Depender de abstrações ao invés de implementação.
+Contratos, 
       
