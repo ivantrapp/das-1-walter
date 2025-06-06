@@ -117,4 +117,21 @@ Arquitetura microkernel:
 Sistema central com vários componentes que ele pode se conectar na execução (IDE e seus plugins, browser, libs java internas ou externas, é microkernel)
 Depender de abstrações ao invés de implementação.
 Contratos, 
-      
+
+# 28/05
+Arquitetura em serviços
+
+Sistema com aplicações focadas no domínio do problema, podendo ser reutilizado em outros pontos, é agrupada pelo domínio ao invés da lógica técnica.
+
+# 29/05
+Arquitetura de microsserviços
+
+Sistema com mini aplicações com contexto delimitado.
+Cada aplicação deve ter seu domínio e realizar ações apenas condizentes com o domínio definido pelo desenvolvedor.
+Essa arquitetura favorece o desacoplamento de lógica de negócio e ajuda nos conceitos de composição e herança para desenvolvimento, visto que tudo dentro do contexto
+condiz com uma regra básica de ser algo conhecido.
+
+Microsserviços seguem o principio de isolamento de dados, é necessário atenção ao utilizar visto que deve-se ter uma alta coordenação entre equipes para garantir a integridade dos dados.
+A comunicação entre microsserviços garante a interoperabilidade entre os serviços;
+
+Características da arquitetura: escalabilidade e elasticidade.
