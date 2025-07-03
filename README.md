@@ -97,6 +97,7 @@ Arquitetura baseada em camadas: A estrutura da empresa impacta em como será des
 - Camadas devem falar apenas com suas camadas adjacentes.
 - Tendência de se tornar difícil de manutenção.
 
+# 07/05 e 08/05
 Arquitetura pipeline:
 - Cadeia de programas que entregam resultados um para o outro.
 - MapReduce:
@@ -110,13 +111,19 @@ Arquitetura pipeline:
 - Consumidor : Recebe por final e armazena a informação no banco etc.
 
 -  Exemplos reais: serviços de streaming, kafka.
--  NODE RED -> Scratch bolado
 
+# 14/05
+NODE RED -> Scratch bolado
+
+# 15/05
 Arquitetura microkernel:
 
 Sistema central com vários componentes que ele pode se conectar na execução (IDE e seus plugins, browser, libs java internas ou externas, é microkernel)
 Depender de abstrações ao invés de implementação.
-Contratos, 
+Contratos;
+
+# 21/05
+Implementação microkernel;
 
 # 28/05
 Arquitetura em serviços
