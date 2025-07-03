@@ -122,6 +122,12 @@ Contratos,
 Arquitetura em serviços
 
 Sistema com aplicações focadas no domínio do problema, podendo ser reutilizado em outros pontos, é agrupada pelo domínio ao invés da lógica técnica.
+Essas aplicações que resolvem o problema do domínio, são interligadas por meio de um hub, (barramento de serviços) onde é agrupado o caminho para os serviços.
+Então não existe comunicação entre domínios na aplicação, cada serviço se comunica com o barramento específico de outro domínio e esse barramento é quem conhece cada serviço do domínio
+e chama baseado na necessidade. Comportamento similar a um API Gateway, se não for igual.
+Facilita troca de serviços pelo baixo acoplamento entre serviços, manutenção.
+Ponto ruim: gera um ponto único de falha, se esse gateway falhar, não existe comunicação entre os serviços dos domínios.
+
 
 # 29/05
 Arquitetura de microsserviços
